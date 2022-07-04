@@ -1,5 +1,16 @@
 alert('You are Connected');
 
+/// String Template Literals:
+let item = 'tacos';
+let price = 2.99;
+let quantity = 3;
+
+`You bought ${quantity} ${item}, your total is ${price * quantity}`;
+// "You bought 3 tacos, your total is 8.97"
+
+
+/// Conditionals Statements:
+/// if, else
 if (11 === 3) {
 	console.log('You have cracked the Network Sir');
 } else {

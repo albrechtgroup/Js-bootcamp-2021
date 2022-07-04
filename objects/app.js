@@ -1,5 +1,5 @@
 const student = {
-	firstName: 'Mayla',
+	firstName: 'Rose',
 	lastName: 'Matrix',
 	strengths: [ 'Playful', 'Snuggly' ],
 	exams: {
