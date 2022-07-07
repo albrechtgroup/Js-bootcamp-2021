@@ -5,23 +5,27 @@ let item = 'tacos';
 let price = 2.99;
 let quantity = 3;
 
-`You bought ${quantity} ${item}, your total is ${price * quantity}`;
-// "You bought 3 tacos, your total is 8.97"
-
+`You bought ${quantity} ${item}, your total is ${price * quantity}.`;
+// "You bought 3 tacos, your total is 8.97."
 
 /// Conditionals Statements:
+/// if
+if(1 === 1) {
+	console.log("It's True!");
+}
+
+/// Example 2
+let ratings = 7;
+
+if (ratings === 7) {
+	console.log('You Got It Dude!!!');
+}
+
 /// if, else
 if (11 === 3) {
 	console.log('You have cracked the Network Sir');
 } else {
 	console.log('Not today Nick!');
-}
-
-/// Example 2
-let rating = 7;
-
-if (rating === 7) {
-	console.log('Yeah dude!!!');
 }
 
 /// Example 3
@@ -38,13 +42,13 @@ if (num % 2 !== 0) {
 //  1 - Needs Improvement
 //  0 - Invalid Rating!
 
-let ratingB = 0;
+let rating = 3;
 
-if (ratingB === 3) {
+if (rating === 3) {
 	console.log('You are a SUPERSTAR!');
-} else if (ratingB === 2) {
+} else if (rating === 2) {
 	console.log('You Meet Expectations.');
-} else if (ratingB === 1) {
+} else if (rating === 1) {
 	console.log('You desperately Need Improvement..');
 } else {
 	console.log('Invalid Rating*');
@@ -59,6 +63,31 @@ if (userScore >= highScore) {
 	highScore = userScore;
 } else {
 	console.log(`Good Game. Your Score of ${userScore} did not beat the high score of ${highScore}`);
+}
+
+/// Nesting Conditionals:
+let pssword = "cat dog";
+if (pssword.length >= 6) {
+	if(pssword.indexOf(' ') !== -1) {
+		console.log("Password cannot include Spaces.");
+	}
+	else {
+		console.log("Valid Password!!");
+	}
+}
+else {
+	console.log("Password too Short!");
+}
+
+/// Truthy and Falsy
+let loggedInUser = 'Ava';
+// let loggedInUser = null;
+
+if (loggedInUser) {
+	console.log("You are Logged IN");
+}
+else {
+	console.log("Please LOG IN");
 }
 
 /// Example 6  '&&' And
@@ -78,3 +107,16 @@ if (age < 6 || age >= 65) {
 } else {
 	console.log('That will be $10 please.');
 }
+
+/// ! Not:
+let userLoggedIn = null;
+
+// If there isn't a logged In user.
+if(!userLoggedIn) {
+	console.log("Sign In");
+}
+
+/// Operator Precedence:
+/// Not ! has a higher precedence than && and ||
+/// && has a higher precedence that ||
+/// You can alter this by using parens ()
