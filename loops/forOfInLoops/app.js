@@ -1,21 +1,28 @@
-alert('Welcome!');
+///'for of/in' loops:
 
-///////////'for Of/IN' Loops
+/// Traditional 'for'
 let subreddits = [ 'football', 'snacks', 'tech', 'remote control' ];
-/////// Traditional 'for'
+
 for (let i = 0; i < subreddits.length; i++) {
 	console.log(subreddits[i]);
 }
 console.log('-----------------------');
 
-/////// 'for OF' Loop
+/// 'for of' loop:
+/// Easier, Cleaner, and Newer in JS*
 for (let sub of subreddits) {
 	console.log(sub);
 }
 console.log('-----------------------');
 
-///////////// taditional "for"
-const magicSquare = [ [ 2, 7, 6 ], [ 9, 5, 1 ], [ 4, 3, 8 ] ];
+/// 'for'
+/// Magic Square game where each 3 numbers add to 15
+/// *Vertically and horizontally*
+const magicSquare = [ 
+	[ 2, 7, 6 ],
+	[ 9, 5, 1 ],
+    [ 4, 3, 8 ]
+ ];
 
 for (let i = 0; i < magicSquare.length; i++) {
 	let row = magicSquare[i];
@@ -27,7 +34,7 @@ for (let i = 0; i < magicSquare.length; i++) {
 }
 console.log('-----------------------');
 
-//////////// "for Of"
+/// 'for Of' is shorter than 'for' Above:
 for (let row of magicSquare) {
 	let sum = 0;
 	for (let num of row) {
@@ -37,7 +44,7 @@ for (let row of magicSquare) {
 }
 console.log('-----------------------');
 
-///////////
+/// This is example of when Not to use 'for of' 
 const words1 = [ 'mail', 'milk', 'bath', 'pink' ];
 const words2 = [ 'box', 'shake', 'tub', 'berry' ];
 
@@ -46,7 +53,7 @@ for (let i = 0; i < words1.length; i++) {
 }
 console.log('-----------------------');
 
-///////////// for Of with Objects
+/// 'for of' with Objects:
 const movieReviews = {
 	Arrival: 9.5,
 	Alien: 9,
@@ -58,10 +65,6 @@ const movieReviews = {
 	GIJoe: 8.9
 };
 
-////// for (let x of movieReviews){}
-///      console.log(x);
-//     }
-
 for (let movie of Object.keys(movieReviews)) {
 	console.log(movie, movieReviews[movie]);
 }
@@ -72,10 +75,10 @@ for (let r of ratings) {
 	total += r;
 }
 let avg = (total /= ratings.length);
-console.log(avg);
+console.log(`Average Movie Rating is: ${avg}`);
 console.log('-----------------------');
 
-///////////// for In Loop
+/// 'for in' loop:
 const jeopardyWinnings = {
 	regularPlay: 2522700,
 	watsonChallenge: 300000,
@@ -88,7 +91,7 @@ for (let keys in jeopardyWinnings) {
 	console.log(jeopardyWinnings[keys]);
 }
 console.log('-----------------------');
-/////////
+
 for (let keys in jeopardyWinnings) {
 	total += jeopardyWinnings[keys];
 }
