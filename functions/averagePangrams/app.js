@@ -24,7 +24,6 @@ avg([2, 4, 6, 8, 10]); // 6
 /// to see if a given sentence contains every letter
 /// of the alphabet.
 ///	Make sure you ignore string casing!
-
 function isPangram(sentence) {
 	let lowerCased = sentence.toLowerCase();
 	for (let char of 'abcdefghijklmnopqrstuvwxyz') {
@@ -47,7 +46,6 @@ function isPangram(sentence) {
 /// Pick a random suit from:
 // 		clubs, spades, hearts, diamonds
 /// Return Both in an object.
-
 function pick(arr) {
 	// return random element from arr
 	const idx = Math.floor(Math.random() * arr.length);
