@@ -1,9 +1,7 @@
-alert('Average!');
-
-/// Write a function to find the average value in an array of numbers
+/// Write a function to find the average value in 
+/// an array of numbers
 ///     avg([0, 50])   // 25
 ///     avg([75, 76, 80, 95, 100])  //85.2
-
 function avg(arr) {
 	let total = 0;
 	// loop over each num
@@ -16,10 +14,15 @@ function avg(arr) {
 	return res;
 }
 
-/// A Pangram is a sentence that contains every letter of the alphabet, like:
-/// "The quick brown fox jumps over the lazy dog"
+avg([2, 4, 6, 8, 10]); // 6
 
-/// Write a function called isPangram, which checks to see if a given sentence contains every letter of the alphabet.
+/// A Pangram is a sentence that contains every 
+/// letter of the alphabet, like: "The quick brown 
+/// fox jumps over the lazy dog"
+
+/// Write a function called isPangram, which checks
+/// to see if a given sentence contains every letter
+/// of the alphabet.
 ///	Make sure you ignore string casing!
 
 function isPangram(sentence) {
@@ -32,7 +35,8 @@ function isPangram(sentence) {
 	return true;
 }
 
-/// Write a function getCard(), which returns a random playing card object.
+/// Write a function getCard(), which returns a 
+/// random playing card object.
 /// Ex:
 /// 	{
 //		value: 'K',
