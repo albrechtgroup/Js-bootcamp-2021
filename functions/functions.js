@@ -77,6 +77,7 @@ answer; // 303
 function isPurple(color) {
 	if(color === 'purple') {
 		return true;
+		console.log("This does NOT run after 'return'");
 	}
 	return false;	
 }
