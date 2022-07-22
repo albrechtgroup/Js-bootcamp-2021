@@ -94,25 +94,28 @@ const squared = function(num) {
 
 squared(7); // 49
 
-/// Higher Order functions
+/// Higher Order functions - Functions that operate
+// on/with other functions:
+/// function 'statement'...
 function addition(x, y) {
 	return x + y;
 }
-
-function subtract(x, y) {
+/// function 'expression'...
+const subtract = function(x, y) {
 	return x - y;
 }
-
+/// function 'statement'...
 function multiply(x, y) {
 	return x * y;
 }
-
-function divide(x, y) {
+/// function 'expression'...
+const divide = function(x, y) {
 	return x / y;
 }
 
-const operations = [ add, subtract, multiply, divide ];
+const operations = [ addition, subtract, multiply, divide ];
 
+/// using the 'multiply' function, index of 2
 operations[2](3, 7); // 21
 
 for (let func of operations) {
@@ -120,21 +123,31 @@ for (let func of operations) {
 	console.log(result);
 }
 
+/// Can store functions in objects:
 const thing = {
 	doSomething: multiply
 };
-
-/// creating a 'method'
+/// Adding a function to an object, we have 
+/// created a .method()
 thing.doSomething(33, 7); ///  231
 
 ///  functions as arguements:
+function callThreeTimes(f) {
+	f();
+	f();
+	f();
+}
+
 function cry() {
 	console.log('Boo Hoo!!!');
 }
 
 function laugh() {
-	console.log('Ahahahhaa!!!');
+	console.log('Ahahahahaha!!!');
 }
+
+callThreeTimes(laugh); // passes a func as an arg!
+callThreeTimes(cry); // passes a func as an arg!
 
 function repeatNTimes(action, num) {
 	for (let i = 0; i < num; i++) {
@@ -142,9 +155,13 @@ function repeatNTimes(action, num) {
 	}
 }
 
-repeatNTimes(laugh, 7); 	
+repeatNTimes(laugh, 3); 	
 
 ///  functions as return values
+console.log("---Functions as Return values---");
+
+/// This 'function factory' gives us 2 functions
+/// below: 'triple' & 'double'
 function multiplyBy(num) {
 	return function(x) {
 		return x * num;
@@ -152,151 +169,52 @@ function multiplyBy(num) {
 }
 
 const triple = multiplyBy(3);
+console.log(triple(9)); // 27
 const double = multiplyBy(2);
-
-///
+console.log(double(100)); // 200 
+ 
+/// Another 'function factory' - inBetween
 function inBetween(x, y) {
 	return function(num) {
 		return num >= x && num <= y;
-	};
+	}
 }
 
 const iSChild = inBetween(0, 18);
+iSChild(17); // true
 const isEighties = inBetween(1979, 1989);
 const isNiceWeather = inBetween(70, 89);
+isNiceWeather(63); // false
 
+/// Callback Functions - A function passed into 
+/// another function as an arguement, which is then
+/// invoked in the Outer function.
+/// We created this 'callback fuction' earlier*
+callThreeTimes(laugh); // passes a func as an arg!
+
+/// Passing in an Anonomouw func is VERY common*
+setTimeout(function() {
+	alert("Anonomous Function, setTimout after 3 s.")
+}, 3000);
+
+/// Button Event Listener - Also using Callback
 const btn = document.querySelector('button');
 btn.addEventListener('click', function() {
-	alert('Why did you click me!?!?!?');
+	alert('WHY did you click me!?!?!?');
 });
 
-/// Array callback methods
-///  'for Each':
-const numbers = [ 20, 21, 22, 23, 24, 25, 26, 27 ];
+/// Hoisting (Not Crucial*)
+/// In Js, var declarations are hoisted above 
+/// console.log
+console.log(monkey);
+var monkey = 'Spider Monkey';
+/// let and const Cannot be hoisted*
 
-/// anonomous function
-numbers.forEach(function(num) {
-	console.log(num * 2);
-});
-
-function printTriple(n) {
-	console.log(n * 3);
+/// function declarations are also hoisted
+howl();
+function howl() {
+	console.log("AWWOOOOOOO!!!");
 }
 
-numbers.forEach(printTriple);
 
-numbers.forEach(function(num, idx) {
-	console.log(idx, num);
-});
 
-const books = [
-	{
-		title: 'Good Omens',
-		authors: [ 'Terry Pratchett', 'Neil Gaiman' ],
-		rating: 4.25
-	},
-	{
-		title: 'Bone: The Complete Edition',
-		authors: [ 'Jeff Smith' ],
-		rating: 4.42
-	},
-	{
-		title: 'American Gods',
-		authors: [ 'Neil Gaiman' ],
-		rating: 4.11
-	},
-	{
-		title: 'A Gentleman in Moscow',
-		authors: [ 'Amor Towles' ],
-		rating: 4.36
-	}
-];
-/// forEach (runs a function)
-books.forEach(function(book) {
-	console.log(book.title.toUpperCase());
-});
-
-/// for of (runs a 'block')
-for (let book of books) {
-	console.log(book.title.toUpperCase());
-}
-
-/// old school
-for (let i = 0; i < books.length; i++) {
-	console.log(books[i].title.toUpperCase());
-}
-
-///  'map'
-const texts = [ 'rofl', 'lol', 'omg', 'ttyl' ];
-const caps = texts.map(function(t) {
-	return t.toUpperCase();
-});
-
-/// .map
-const numbs = [ 20, 21, 22, 23, 24, 25, 26, 27 ];
-const words = [ 'asap', 'byob', 'rsvp', 'diy' ];
-
-const doubles = numbs.map(function(num) {
-	return num * 2;
-});
-
-const numDetail = numbers.map(function(n) {
-	return {
-		value: n,
-		isEven: n % 2 === 0
-	};
-});
-
-const abbreviations = words.map(function(word) {
-	return word.toUpperCase().split('').join('.');
-});
-
-///  Arrow Functions
-/// Old
-const square = function(x) {
-	return x * x;
-};
-/// New
-const sqr = (x) => {
-	return x * x;
-};
-
-const isEven = (num) => {
-	return num % 2 === 0;
-};
-
-const mult = (x, y) => {
-	return x * y;
-};
-
-const greet = () => {
-	console.log('Hi!');
-};
-///
-const square3 = (n) => {
-	return n * n;
-};
-//// alittle shorter
-const square4 = (n) => n * n;
-////  Shortest
-const square5 = (n) => n * n;
-
-const nums = [ 1, 2, 3, 4, 5, 6, 7, 8 ];
-
-const doubles1 = nums.map(function(n) {
-	return n * 2;
-});
-
-const doubles2 = nums.map((n) => {
-	return n * 2;
-});
-
-const doubles3 = nums.map((n) => n * 2);
-
-/// .reduce
-const grades = [ 87, 64, 96, 92, 88, 99, 73, 70, 64 ];
-
-const maxGrade = grades.reduce((max, currVal) => {
-	if (currVal > max) return currVal;
-	return max;
-}); //  99
