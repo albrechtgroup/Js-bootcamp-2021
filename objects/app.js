@@ -74,4 +74,4 @@ const shoppingCart = [
 	}
 ];
 
-
+/// Object Methods:
