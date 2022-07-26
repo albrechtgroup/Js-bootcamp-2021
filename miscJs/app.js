@@ -1,6 +1,5 @@
-alert('Connected!!');
-////////////  Default Parameters
+///  Default Parameters
 const greet = (person, greeting = 'Hi') => {
     console.log(`${greeting}, ${person}!`);
 }
-///// greet('Hello', 'Mariya');
+/// greet('Hello', 'Mariya');
