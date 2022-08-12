@@ -1,5 +1,5 @@
 /// Function 'scope':
-/// The location where a var is defined dictates
+/// The location where a 'var' is defined dictates
 /// where we have access to that variable.
 function helpMe() {
 	let msg = "I'm on Fire!!!";
@@ -12,6 +12,7 @@ let bird = 'Mandarin Duck';
 
 function birdWatch() {
 	let bird = 'Golden Pheasant';
+	console.log(bird);
 };
 
 birdWatch(); // Golden Pheasant
@@ -26,6 +27,7 @@ for (var i = 10; i < animls.length; i++) {
 	console.log(i, animls[i]);
 }
 console.log(i);
+console.log('----i----');
 
 /// 'let' & 'const' are scoped to their {} blocks
 let animals = [ 'Grizzly bear', 'Panda bear', 'Black bear' ];
@@ -33,7 +35,8 @@ let j = 10;
 for (let j = 10; j < animals.length; j++) {
 	console.log(j, animals[j]);
 }
-console.log(i);
+console.log(j);
+console.log('----j----');
 
 let radius = 9;
 
@@ -57,7 +60,7 @@ function outer() {
 	}
 	inner(); 
 } 
-
+/// the function 'outer' is running 'inner' func
 outer(); // THE SHINING
 
 /// *Nested Example (React.js)
@@ -76,13 +79,14 @@ function TodoList() {
 };
 
 /// Function expressions:
-/// Andther syntax we can use to define functions
+/// Another syntax we can use to define functions
 /// The function 'statements' we have been using
 function add(x, y) {
 	return x + y;
 }
+
 /// The same function as an 'expression'
-/// assingning the function(which is an object),
+/// Assingning the function(which is an object),
 /// to a variable to pass around and use.
 const sum = function(x, y) {
 	return x + y;
@@ -92,6 +96,7 @@ const squared = function(num) {
 	return num * num;
 }
 
+sum(1, 1); // 2
 squared(7); // 49
 
 /// Higher Order functions - Functions that operate
@@ -112,12 +117,14 @@ function multiply(x, y) {
 const divide = function(x, y) {
 	return x / y;
 }
-
+/// This is an array of above functions 
 const operations = [ addition, subtract, multiply, divide ];
 
 /// using the 'multiply' function, index of 2
 operations[2](3, 7); // 21
 
+/// 'for of' is running the parameters of func
+/// looping over each of the operations in array 
 for (let func of operations) {
 	let result = func(33, 7);
 	console.log(result);
@@ -132,12 +139,13 @@ const thing = {
 thing.doSomething(33, 7); ///  231
 
 ///  functions as arguements:
+/// Here: f is the parameter:
 function callThreeTimes(f) {
 	f();
 	f();
 	f();
 }
-
+/// 'cry' and 'laugh' are arguements:
 function cry() {
 	console.log('Boo Hoo!!!');
 }
@@ -146,8 +154,8 @@ function laugh() {
 	console.log('Ahahahahaha!!!');
 }
 
-callThreeTimes(laugh); // passes a func as an arg!
-callThreeTimes(cry); // passes a func as an arg!
+callThreeTimes(laugh); // passes laugh func as an arg!
+callThreeTimes(cry); // passes cry func as an arg!
 
 function repeatNTimes(action, num) {
 	for (let i = 0; i < num; i++) {
@@ -156,6 +164,7 @@ function repeatNTimes(action, num) {
 }
 
 repeatNTimes(laugh, 3); 	
+repeatNTimes(cry, 1);
 
 ///  functions as return values
 console.log("---Functions as Return values---");
@@ -169,8 +178,8 @@ function multiplyBy(num) {
 }
 
 const triple = multiplyBy(3);
-console.log(triple(9)); // 27
 const double = multiplyBy(2);
+console.log(triple(9)); // 27
 console.log(double(100)); // 200 
  
 /// Another 'function factory' - inBetween
