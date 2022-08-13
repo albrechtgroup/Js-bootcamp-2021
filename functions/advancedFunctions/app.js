@@ -201,7 +201,7 @@ isNiceWeather(63); // false
 /// We created this 'callback fuction' earlier*
 callThreeTimes(laugh); // passes a func as an arg!
 
-/// Passing in an Anonomouw func is VERY common*
+/// Passing in an Anonomous func is VERY common*
 setTimeout(function() {
 	alert("Anonomous Function, setTimout after 3 s.")
 }, 3000);
@@ -213,11 +213,11 @@ btn.addEventListener('click', function() {
 });
 
 /// Hoisting (Not Crucial*)
-/// In Js, var declarations are hoisted above 
+/// In Js, 'var' declarations are hoisted above 
 /// console.log
 console.log(monkey);
 var monkey = 'Spider Monkey';
-/// let and const Cannot be hoisted*
+/// let and const Cannot* be hoisted
 
 /// function declarations are also hoisted
 howl();
