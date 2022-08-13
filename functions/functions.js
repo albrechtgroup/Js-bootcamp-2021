@@ -53,7 +53,7 @@ add(3, 4); // 7
 const sum = function(x, y) {
 	return x + y;
 };
-sum(3, 7); // 7
+sum(3, 4); // 7
 console.log('------------');
 
 /// Multiple parameters. *Order matters*
