@@ -1,22 +1,25 @@
 /// Functions on Collection of Data:
 /// Array callback methods
 
-/// 'forEach' - Accepts a callback function. Calls 
-/// the function once per element in the array.
+/// 'forEach' Method - Accepts a callback function.
+/// Calls the function once per element in the array.
 const numbers = [20, 21, 22, 23, 24, 25, 26, 27];
-/// anonomous/One-time function
+/// Anonomous/One-time function to multiply each 
+/// number in array times 2
 numbers.forEach(function(num) {
 	console.log(num * 2);
 });
 
+console.log('---------');
 /// Another way to use for each. Re-Usable func
-function printTriple(n) {
-	console.log(n * 3);
+function printTriple(num) {
+	console.log(num * 3);
 }
 
 numbers.forEach(printTriple);
 
-/// forEach using a Second parameter:
+/// 'forEach' using a Second parameter:
+/// *Order of parameters does Not matter here:
 numbers.forEach(function(num, idx) {
 	console.log(idx, num);
 })
@@ -51,7 +54,7 @@ books.forEach(function(book) {
 
 /// 'for of' (runs a 'block')
 for (let book of books) {
-	console.log(book.title.toUpperCase());
+	console.log(book.title.toLowerCase());
 }
 
 /// old school 'for'
@@ -110,7 +113,7 @@ const square = function(x) {
 	return x * x;
 };
 
-/// New arrow func syntax, same result
+/// New arrow func syntax, Same result
 const squareArrow = (x) => {
 	return x * x;
 };
