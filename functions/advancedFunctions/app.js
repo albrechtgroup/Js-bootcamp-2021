@@ -217,7 +217,7 @@ btn.addEventListener('click', function() {
 /// console.log
 console.log(monkey);
 var monkey = 'Spider Monkey';
-/// let and const Cannot* be hoisted
+/// let and const Cannot be hoisted
 
 /// function declarations are also hoisted
 howl();
