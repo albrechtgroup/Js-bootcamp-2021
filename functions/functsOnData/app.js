@@ -11,7 +11,7 @@ numbers.forEach(function(num) {
 });
 
 console.log('---------');
-/// Another way to use for each. Re-Usable func
+/// Another way to use 'forEach'. Re-Usable func
 function printTriple(num) {
 	console.log(num * 3);
 }
@@ -62,6 +62,7 @@ for (let i = 0; i < books.length; i++) {
 	console.log(books[i].title.toUpperCase());
 }
 
+console.log('----.map()----');
 /// *Very Common, more than the other methods*
 /// .map() - Creates a New array with the result of 
 /// calling a calback on every element in the array.
@@ -127,7 +128,7 @@ const mult = (x, y) => {
 	return x * y;
 };
 
-/// No params still needs parenthesis
+/// With no parameters, still need parenthesis
 const greet = () => {
 	console.log('Hi!');
 };
@@ -135,7 +136,7 @@ const greet = () => {
 greet(); // Hi!
 
 /// Arrow Functions: Implicit returns: 
-/// Arrow function w parenthesis around params
+/// Arrow function w/ parenthesis around params
 const square2 = (n) => {
 	return n * n;
 };

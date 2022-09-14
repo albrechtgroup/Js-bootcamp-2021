@@ -82,12 +82,13 @@ function isPurple(color) {
 	return false;	
 }
 
+isPurple('blue'); // false
+
 /// An even shorter version:
 function issPurple(color) {
 	return color.toLowerCase() === 'purple';
 }
 
-isPurple('blue'); // false
 issPurple('red'); // false
 
 
