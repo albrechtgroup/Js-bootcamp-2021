@@ -20,8 +20,13 @@ btn.addEventListener('mouseover', () => {
     console.log("Mouse Over Event!")
 })
 
-// 
+// Events on multiple elements: 
 const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'indigo', 'violet'];
+
+const printColor = function() {
+    console.log(this);
+    console.log(this.style.backgroundColor);
+}
 
 const container = document.querySelector('#boxes');
 
@@ -30,4 +35,7 @@ for (let color of colors) {
     box.style.backgroundColor = color;
     box.classList.add('box');
     container.appendChild(box);
+    box.addEventListener('click', printColor);
 }
+
+

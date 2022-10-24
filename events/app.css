@@ -1,3 +1,7 @@
+body {
+    background-color: grey;
+}
+
 #boxes {
     display: flex;
     justify-content: center;
