@@ -10,11 +10,28 @@
 <body>
     <h1>Communicating w/ Events:</h1>
 
-    <button id="btn">SUBMIT FORM</button>
+    <p>
+        <input type="text" name="username" placeholder="Username" id="username">
+        <button id="btn">LOGIN</button>
 
-    <section id="boxes">
-        
-    </section>
+        <section id="boxes">
+
+        </section>
+    </p>
+    <p>
+        <h2>Shopping List:</h2>
+        <input type="text" placeholder="Enter an Item" name="addItem" id="addItem">
+        <ul id="items"></ul>
+    </p>
+    
+    <form action="/NOOOO" method="get" id="signup-form">
+        <input type="text" placeholder="Credit Card" id="cc">
+        <label>
+            I Agree to the Terms
+            <input type="checkbox" id="terms">
+        </label>
+        <input type="submit" id="submit">
+    </form>
 
     <script src="app.js"></script>
 </body>
