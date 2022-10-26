@@ -18,3 +18,21 @@ console.log('I happen 3rd*');
 // Callbacks:
 const btn = document.querySelector('button');
 
+// Promises - an object representing the eventual 
+// completion or failure of an asynchronous operation
+const willGetYouACareer = new Promise((resolve, reject) => {
+    const rand = Math.random();
+    if(rand < 0.5) {
+        resolve();
+    }
+    else {
+        reject();
+    }
+});
+
+willGetYouACareer.then(() => {
+    console.log("Congradulations, you were Accepted!");
+});
+willGetYouACareer.catch(() => {
+    console.log("SORRY, you were NOT accepted.");
+});
