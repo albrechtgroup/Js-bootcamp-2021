@@ -1,6 +1,4 @@
-alert('You are Connected');
-
-/// String Template Literals:
+// String Template Literals:
 let item = 'tacos';
 let price = 2.99;
 let quantity = 3;
@@ -8,8 +6,8 @@ let quantity = 3;
 `You bought ${quantity} ${item}, your total is ${price * quantity}.`;
 // "You bought 3 tacos, your total is 8.97."
 
-/// Conditionals Statements:
-/// if
+// Conditionals Statements:
+// if
 if(1 === 1) {
 	console.log("It's True!");
 }
