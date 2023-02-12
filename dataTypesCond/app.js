@@ -1,4 +1,57 @@
+// JS Values and Variables:
+// NaN = Not a Number: *IS is numeric value*
+0/0 // NaN
+1 + NaN // NaN
+
+let score = 0;
+score = score + 10;
+console.log(score); // 10
+
+score += 10; 
+console.log(score); // 20
+
+let jackPot = 10;
+score *= jackPot;  
+console.log(score); // 200
+
+score -= 30; 
+console.log(score); // 170
+
+// With Unary Operators: 
+score ++;
+console.log(score); // 171
+
+// Strings: 
+let firstName = "Andy";
+let lastName = "Albrecht";
+const fullName = firstName + " " + lastName;
+console.log(fullName); // Andy Albrecht
+
+// String Methods:
+let color = "	   PUrplE  ";
+console.log(color.trim().toLocaleUpperCase()); // "PURPLE"
+
+// .indexOf: 
+let tvShow = 'catdog';
+tvShow.indexOf('cat'); // 0
+tvShow.indexOf('dog'); // 3
+
+// .slice(): Up to, Not including 5*
+"superhero".slice(0, 5); // "super"
+console.log("superhero".slice(5)); // "hero"
+
+// .replace(what to replace, content):
+let annoying = "teehehe so funny! teehehe!";
+// Only replaces the first occurance
+console.log(annoying.replace("teehehe", "Hahaha")); // 
+
+// Quiz: 
+'GARBAGE!'.slice(2).replace("B", ""); // "RAGE!"
+
 // String Template Literals:
+// "Interpolating" JS data in the${}
+`I counted ${3 + 4} sheep!!!`; // "I counted 7 sheep!!!"
+
 let item = 'tacos';
 let price = 2.99;
 let quantity = 3;
