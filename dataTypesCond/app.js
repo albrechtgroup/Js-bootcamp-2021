@@ -59,20 +59,63 @@ let quantity = 3;
 `You bought ${quantity} ${item}, your total is ${price * quantity}.`;
 // "You bought 3 tacos, your total is 8.97."
 
+// 'Null': Intentional abscense of any value
+//         *Must be assigned
+
+// 'Undefined': Variables that do not have 
+//         a defined value are undefined
+
+// Math Object:
+Math.PI // 3.141592
+// Rounding a number:
+Math.round(4.9); // 5
+
+// Absolute Value:
+Math.abs(-456); // 456
+
+// Raises 2 to the 5th power:
+Math.pow(2,5) // 32
+
+// Removes decimal:
+Math.floor(3.999); // 3
+
+// Our Favorite! Math.random() = Gives us a random
+// decimal between 0 and 1 (non-inclusive)
+
+// Generate a random number between 1 and 10:
+Math.floor(Math.random() * 10) + 1;
+
+// parseInt(): 
+parseInt('24') // 24
+parstInt('24.987') // 24
+parseInt('28dayslater') // 28
+
+// parseFloat();
+parseFloat('24.987') // 24.987
+parseFloat('7') // 7
+parseFloat('i ate 3 shrimp') // NaN
+
+// Comparison Operators: 
+// > greater than, < less than, 
+// >= greater than or equal to
+// <= less than or equal to
+// == equality, != not equal
+// === strict equal, !== strict non-equal
+
+// ===, !== *Always use Tripe equal* 
+
 // Conditionals Statements:
 // if
 if(1 === 1) {
 	console.log("It's True!");
 }
 
-/// Example 2
 let ratings = 7;
-
 if (ratings === 7) {
 	console.log('You Got It Dude!!!');
 }
 
-/// if, else
+// if, else
 if (11 === 3) {
 	console.log('You have cracked the Network Sir');
 } else {
