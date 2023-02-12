@@ -18,6 +18,7 @@ score -= 30;
 console.log(score); // 170
 
 // With Unary Operators: 
+// *Common to Increment/Decrement By 1
 score ++;
 console.log(score); // 171
 
@@ -27,7 +28,7 @@ let lastName = "Albrecht";
 const fullName = firstName + " " + lastName;
 console.log(fullName); // Andy Albrecht
 
-// String Methods:
+// String Methods: You can chain them
 let color = "	   PUrplE  ";
 console.log(color.trim().toLocaleUpperCase()); // "PURPLE"
 
@@ -37,19 +38,20 @@ tvShow.indexOf('cat'); // 0
 tvShow.indexOf('dog'); // 3
 
 // .slice(): Up to, Not including 5*
-"superhero".slice(0, 5); // "super"
+console.log("superhero".slice(0, 5)); // "super"
 console.log("superhero".slice(5)); // "hero"
 
 // .replace(what to replace, content):
 let annoying = "teehehe so funny! teehehe!";
 // Only replaces the first occurance
-console.log(annoying.replace("teehehe", "Hahaha")); // 
+console.log(annoying.replace("teehehe", "Hahaha"));  
+// "Hahaha so funny! teehehe!"
 
 // Quiz: 
 'GARBAGE!'.slice(2).replace("B", ""); // "RAGE!"
 
 // String Template Literals:
-// "Interpolating" JS data in the${}
+// "Interpolating" JS data inside of  the ${}
 `I counted ${3 + 4} sheep!!!`; // "I counted 7 sheep!!!"
 
 let item = 'tacos';
@@ -80,20 +82,19 @@ Math.pow(2,5) // 32
 Math.floor(3.999); // 3
 
 // Our Favorite! Math.random() = Gives us a random
-// decimal between 0 and 1 (non-inclusive)
-
+// Decimal between 0 and 1 (non-inclusive)
 // Generate a random number between 1 and 10:
 Math.floor(Math.random() * 10) + 1;
 
 // parseInt(): 
-parseInt('24') // 24
-parstInt('24.987') // 24
-parseInt('28dayslater') // 28
+// parseInt('24') // 24
+// parstInt('24.987') // 24
+// parseInt('28dayslater') // 28
 
 // parseFloat();
-parseFloat('24.987') // 24.987
-parseFloat('7') // 7
-parseFloat('i ate 3 shrimp') // NaN
+// parseFloat('24.987') // 24.987
+// parseFloat('7') // 7
+// parseFloat('i ate 3 shrimp') // NaN
 
 // Comparison Operators: 
 // > greater than, < less than, 
@@ -119,12 +120,10 @@ if (ratings === 7) {
 if (11 === 3) {
 	console.log('You have cracked the Network Sir');
 } else {
-	console.log('Not today Nick!');
+	console.log('You have been Locked Out!');
 }
 
-/// Example 3
 let num = 37;
-
 if (num % 2 !== 0) {
 	console.log('You have selected an ODD Number.');
 }
