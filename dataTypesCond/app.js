@@ -123,19 +123,19 @@ if (11 === 3) {
 	console.log('You have been Locked Out!');
 }
 
+// Using 'modulo' to check if the # is even or not..
 let num = 37;
 if (num % 2 !== 0) {
 	console.log('You have selected an ODD Number.');
 }
 
-/// Example 4
 //  Ratings:
 //  3 - Superstar
 //  2 - Meets Expectations
 //  1 - Needs Improvement
 //  0 - Invalid Rating!
-
-let rating = 3;
+let rating = Math.floor(Math.random() * 3) + 1;
+console.log(rating); // Should be random
 
 if (rating === 3) {
 	console.log('You are a SUPERSTAR!');
@@ -147,7 +147,7 @@ if (rating === 3) {
 	console.log('Invalid Rating*');
 }
 
-/// Example 5
+
 let highScore = 1700;
 let userScore = 1980;
 
@@ -158,7 +158,7 @@ if (userScore >= highScore) {
 	console.log(`Good Game. Your Score of ${userScore} did not beat the high score of ${highScore}`);
 }
 
-/// Nesting Conditionals:
+// Nesting Conditionals:
 let pssword = "cat dog";
 if (pssword.length >= 6) {
 	if(pssword.indexOf(' ') !== -1) {
@@ -172,10 +172,9 @@ else {
 	console.log("Password too Short!");
 }
 
-/// Truthy and Falsy
+// Truthy and Falsy
 let loggedInUser = 'Ava';
 // let loggedInUser = null;
-
 if (loggedInUser) {
 	console.log("You are Logged IN");
 }
@@ -183,7 +182,7 @@ else {
 	console.log("Please LOG IN");
 }
 
-/// Example 6  '&&' And
+// '&&' And:
 let password = 'assMan';
 
 if (password.length >= 5 && password.indexOf(' ') === -1) {
@@ -192,7 +191,7 @@ if (password.length >= 5 && password.indexOf(' ') === -1) {
 	console.log('Invalid Password');
 }
 
-/// Example 7  '||' Or
+// '||' Or:
 let age = 76;
 
 if (age < 6 || age >= 65) {
@@ -201,15 +200,14 @@ if (age < 6 || age >= 65) {
 	console.log('That will be $10 please.');
 }
 
-/// ! Not:
+// ! Not:
 let userLoggedIn = null;
-
 // If there isn't a logged In user.
 if(!userLoggedIn) {
 	console.log("Sign In");
 }
 
-/// Operator Precedence:
-/// Not ! has a higher precedence than && and ||
-/// && has a higher precedence that ||
-/// You can alter this by using parens ()
+// Operator Precedence:
+// Not ! has a higher precedence than && and ||
+// && has a higher precedence that ||
+// You can alter this by using parens ()
