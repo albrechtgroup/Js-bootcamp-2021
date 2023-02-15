@@ -1,4 +1,4 @@
-/// Switch Operator:
+// Switch Statement:
 let day = 7;
 
 switch (day) {
@@ -27,11 +27,29 @@ switch (day) {
 		console.log('Invalid Day!');
 }
 
-/// Ternary Operator- 3 Pieces:
-/// Replaces only the 'if, else' statement. Where if 
-/// its not the one thing, its the other.
+// We can double them without the 'break;', it the 
+// outcome is the same
+let emoji = 'happy face';
 
-/// Standard if, else:
+switch (emoji) {
+	case 'heart':
+	case 'lips':
+		console.log('red');
+		break;
+	case 'eggplant':
+		console.log('purple');
+		break;
+	case 'happy face':
+	case 'sad face':
+		console.log('YELLOW!!!');
+		break;
+}
+
+// Ternary Operator- 3 Pieces:
+// Replaces only the 'if, else' statement. Where if 
+// its not the one thing, its the other.
+
+// Standard if, else:
 let num = 7;
 
 if (num === 7) {
@@ -40,10 +58,11 @@ if (num === 7) {
 	console.log('BAD!');
 }
 
-// Turns into below
+// Turnary turns into a single line below: ? :
 num === 5 ? console.log('LUCKY!!!') : console.log('BAD! Not lucky at ALL!!!');
 
-let status = 'online';
+// Use Turnary to assign a value to a variable:
+let status = 'offline';
 
 let color;
 if(status === 'offline') {
@@ -53,5 +72,6 @@ else{
 	color = 'green';
 }
 
-/// Or with Ternary Operator:
+// Or with Ternary Operator:
 let colors = status === 'offline' ? 'red' : 'green';
+console.log(color);
