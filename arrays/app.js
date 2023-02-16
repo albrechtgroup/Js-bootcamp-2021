@@ -1,11 +1,18 @@
 // Arrays:
 let shoppingList = ['Avacodos', 'Cereal', '2% Milk'];
 
-// Update/change value:
+// Update/Change value: Arrays are Changable, unlike
+// variables.
 shoppingList[2] = 'Chocolate Almond Milk';
+shoppingList[0] = 'Flour Tortillas';
+shoppingList[1] = 'Ice Cream';
 
+console.log(shoppingList); // ['Chocolate Almond Milk', etc..] 
 
 // Array Methods:
+// .length
+console.log(shoppingList.length); // 3
+
 // This array is broken up into different lines due
 // to the length of the strings.
 let topSongs = [
@@ -15,16 +22,19 @@ let topSongs = [
     'Life On Mars'
 ];
 
-// .pop - removes from the End *PERMANENTLY & 
-// returns the item
-topSongs.pop(); // 'Life of Mars'
-
 // .push - adds to the End of array
 topSongs.push('Fortunate Son');
 topSongs.push('Strokin');
+console.log(topSongs);
 
+// .pop - removes from the End *PERMANENTLY & 
+// returns the item
+topSongs.pop(); // 'Strokin'
+console.log(topSongs);
+
+// Ideal kitchen sink 'Stack"
+// Last thing added, is First thing out.. l.I.F.O.
 let dirtyDishes = ['big platter'];
-
 // .unshift - adds to Start 
 dirtyDishes.unshift('big plate');
 dirtyDishes.unshift('small plate');
@@ -38,18 +48,25 @@ dirtyDishes.shift(); // 'bowl'
 dirtyDishes.shift(); // 'small plate'
 
 // .concat() - Used to merge two or more arrays:
+const array1 = ['a', 'b', 'c'];
+const array2 = ['d', 'e', 'f'];
 // *Order matters
+console.log(array2.concat(array1));
+// ['d', 'e', 'f', 'a', 'b', 'c',]
+
+
 let fruits = ['Strawberries', 'Watermelon'];
 let veggies = ['Asparagus', 'Brocolli'];
 let meats = ['Steak', 'Turkey'];
-
+// Can also concat Several arrays at a time:
 let market = fruits.concat(veggies, meats);
+console.log(market);
 
 // .includes() - Determines whether an array includes
 // a certain value. Returning true or false
-let array1 = [1, 2, 3, 4];
+let array3 = [1, 2, 3, 4];
 
-console.log(array1.includes(3)); // true
+console.log(array3.includes(3)); // true
 
 let ingredients = [
     'water',
@@ -80,12 +97,12 @@ let noWorries = ['Hak', 'una', 'matada'];
 
 console.log(noWorries.join()); // Hak,una,matada
 console.log(noWorries.join('-')); // Hak-una-matada
-console.log(noWorries.join('')); // Hakunamatad
+console.log(noWorries.join('')); // Hakunamatada
 
-// .slice() - method returns a copy of a portion of
+// .slice() - method returns a COPY of a portion of
 // the array into a new array object:
 let animals = ['shark', 'salmon', 'whale', 'bear', 'lizard', 'tortoise'];
- 
+// Up to and Not including index 3*
 let swimmers = animals.slice(0, 3);
 // ['shark', 'salmon', 'whale']
 
@@ -94,12 +111,13 @@ let mammals = animals.slice(2, 4);
 let reptiles = animals.slice(4);
 // ['lizard', 'tortoise']
 
+// Makes a copy of the array*
 let copy = animals.slice();
-// Makes a copy of the array
 
-// .splice() - method changes the contents of ar array
+// .splice() - method CHANGES the contents of ar array
 // by removing or replacing existing elements, 
 // and/or adding new elements:
+
 // .splice(starting, deleteCount, itemsToInsert)
 animals.splice(3,2); // ['whale', 'bear']
 
@@ -121,6 +139,25 @@ animals.splice(3, 2, 'orca');
 let ladySongs = ['Mrs. Robinson', 'Angie', 'Jolene', 'Maggie May', 'Roxanne'];
 
 ladySongs.sort(); // ['Angie', 'Jolene', 'Maggie May', 'Mrs. Robinson', 'Roxanne']
+
+// Reference Types*
+
+// 'Const' and arrays:
+// Values in arrays Can change, as long as the 
+// reference remains the same
+const myEggs = ['brown', 'brown'];
+myEggs.push('purple');
+console.log(myEggs); 
+
+myEggs[0] = 'green';
+console.log(myEggs); // ['green', 'brown', 'purple'];
+
+myEggs = ['blue', 'pink']; // ERROR. Nope!!
+
+// My Analogy* const groceryList = [], will always 
+// be a list with items; But the items themselves
+// can be Changed, Modified, Updated..
+const groceryList = [];
 
 // Nested arrays:
 const colors = [
