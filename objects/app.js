@@ -107,4 +107,5 @@ palette3.mustard = '#ebf876';
 console.log(palette2);
 
 // Array & Object Equality:
+// Both are refering to the Same object in memory*
 palette2 === palette3; // true
