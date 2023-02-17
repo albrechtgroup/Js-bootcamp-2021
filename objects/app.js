@@ -108,4 +108,7 @@ console.log(palette2);
 
 // Array & Object Equality:
 // Both are refering to the Same object in memory*
+// Checking for Equality of Reference, not Equality
+// of Contents*
 palette2 === palette3; // true
+
