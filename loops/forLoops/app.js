@@ -1,16 +1,21 @@
-/// for loops:
-/// Log 'Hello:' plus the integer to 13
-for (let i = 1; i <= 13; i++) {
+// for loops:
+// Log 'Hello:' plus the integer to 17
+for (let i = 1; i <= 7; i++) {
 	console.log('Hello', i);
 }
 
-/// Log number 1 to 33 squared and the total
-for (let num = 1; num <= 33; num++) {
+// Start i at 50 and subtract 10
+for (let i = 50; i >= 0; i -= 10) {
+	console.log(i)
+}
+
+// Log number 1 to 13 squared and the total
+for (let num = 1; num <= 13; num++) {
 	console.log(`${num}x${num} = ${num * num}`);
 }
 
-/// for loop over array and print integer and string in
-/// the array
+// for loop over array and print integer and 
+// string in the array
 const animals = [ 'lions', 'tigers', 'bears' ];
 
 for (let i = 0; i < animals.length; i++) {
@@ -19,14 +24,14 @@ for (let i = 0; i < animals.length; i++) {
 
 console.log('OH MY!!!');
 
-/// for loop over array and print each exam score
+// for loop over array and print each exam score
 const examScores = [ 98, 91, 87, 93, 89, 83, 77 ];
 
 for (let i = 0; i < examScores.length; i++) {
 	console.log(i, examScores[i]);
 }
 
-/// for loop over array's objects and print properties
+// for loop over array's objects and print properties
 const myStudents = [
 	{
 		firstName: 'Zeus',
@@ -51,7 +56,20 @@ for (let i = 0; i < myStudents.length; i++) {
 	console.log(`${student.firstName} scored ${student.grade}`);
 }
 
-/// for loop over myStudents to print average score
+// for loop over a string:
+const word = 'stressed';
+
+for (let i = 0; i < word.length; i++) {
+	console.log(word[i])
+}
+
+// loop over the string backwards:
+// Stressed spelled backwards is Desserts!!
+for (let i = word.length -1; i >= 0; i--) {
+	console.log(word[i])
+}
+
+// for loop over myStudents to print average score
 let total = 0;
 
 for (let i = 0; i < myStudents.length; i++) {
@@ -61,7 +79,7 @@ for (let i = 0; i < myStudents.length; i++) {
 
 console.log(total / myStudents.length);
 
-/// Nested for loops:
+// Nested for loops:
 let str = 'LOL';
 for(let i = 0; i <= 4; i++) {
 	console.log("OUTER Loop:", i);
@@ -70,9 +88,9 @@ for(let i = 0; i <= 4; i++) {
 	}
 }
 
-///'for of/in' loops:
+//'for of/in' loops:
 
-/// Traditional 'for'
+// Traditional 'for'
 let subreddits = [ 'football', 'snacks', 'tech', 'remote control' ];
 
 for (let i = 0; i < subreddits.length; i++) {
