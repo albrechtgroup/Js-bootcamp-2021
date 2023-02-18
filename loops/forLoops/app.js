@@ -88,9 +88,7 @@ for(let i = 0; i <= 4; i++) {
 	}
 }
 
-//'for of/in' loops:
-
-// Traditional 'for'
+// Traditional 'for' loop:
 let subreddits = [ 'football', 'snacks', 'tech', 'remote control' ];
 
 for (let i = 0; i < subreddits.length; i++) {
@@ -98,22 +96,21 @@ for (let i = 0; i < subreddits.length; i++) {
 }
 console.log('-----------------------');
 
-/// 'for of' loop:
-/// Easier, Cleaner, and Newer in JS*
+// 'for of' loop:
+// Easier, Cleaner, and Newer in JS*
 for (let sub of subreddits) {
 	console.log(sub);
 }
 console.log('-----------------------');
 
-/// 'for'
-/// Magic Square game where each 3 numbers add to 15
-/// *Vertically and horizontally*
+// Magic Square game where each 3 numbers add to 15
+// *Vertically and horizontally*
 const magicSquare = [ 
 	[ 2, 7, 6 ],
 	[ 9, 5, 1 ],
     [ 4, 3, 8 ]
  ];
-
+// 'for' loop:
 for (let i = 0; i < magicSquare.length; i++) {
 	let row = magicSquare[i];
 	let sum = 0;
@@ -124,7 +121,7 @@ for (let i = 0; i < magicSquare.length; i++) {
 }
 console.log('-----------------------');
 
-/// 'for Of' is shorter than 'for' Above:
+// 'for Of' is shorter than 'for' Above:
 for (let row of magicSquare) {
 	let sum = 0;
 	for (let num of row) {
@@ -134,7 +131,9 @@ for (let row of magicSquare) {
 }
 console.log('-----------------------');
 
-/// This is example of when Not to use 'for of' 
+// This is example of when Not to use 'for of'
+// When you need to use an 'index'to iterate over
+// the items in the arrays.
 const words1 = [ 'mail', 'milk', 'bath', 'pink' ];
 const words2 = [ 'box', 'shake', 'tub', 'berry' ];
 
@@ -143,7 +142,7 @@ for (let i = 0; i < words1.length; i++) {
 }
 console.log('-----------------------');
 
-/// 'for of' with Objects:
+// 'for of' with Objects:
 const movieReviews = {
 	Arrival: 9.5,
 	Alien: 9,
@@ -168,7 +167,8 @@ let avg = (total1 /= ratings.length);
 console.log(`Average Movie Rating is: ${avg}`);
 console.log('-----------------------');
 
-/// 'for in' loop:
+// 'for in' loop:
+// Loops over the 'keys' in an object:
 const jeopardyWinnings = {
 	regularPlay: 2522700,
 	watsonChallenge: 300000,
