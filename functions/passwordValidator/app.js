@@ -1,12 +1,14 @@
-/// Write a isValidPassword function
-/// It accepts 2 arguements: password and username
-/// Password must:
-///     -be at least 8 characters
-///     -cannot contain spaces
-///     -cannot contain the username
-/// If all the requirements are met, return true.
-/// Otherwise: false
+// Write a isValidPassword function
+// It accepts 2 arguements: password and username
+// Password must:
+//     -be at least 8 characters
+//     -cannot contain spaces
+//     -cannot contain the username
+// If all the requirements are met, return true.
+// Otherwise: false
 
+// Reversing the logic* If All three of the above 
+// requirements are false, then return true.
 function isValidPassword(password, username) {
 	if (password.length < 8) {
 		return false;
@@ -20,7 +22,7 @@ function isValidPassword(password, username) {
 	return true;
 }
 
-/// 0r...
+// 0r..
 function isValidPassword(password, username) {
 	if (password.length < 8 || password.indexOf(' ') !== -1 || password.indexOf(username) !== -1) {
 		return false;
@@ -28,7 +30,7 @@ function isValidPassword(password, username) {
 	return true;
 }
 
-/// 0r...
+// 0r...
 function isValidPassword(password, username) {
 	const tooShort = password.length < 8;
 	const hasSpace = password.indexOf(' ') !== -1;
