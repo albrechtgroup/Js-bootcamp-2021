@@ -1,14 +1,14 @@
-/// 'while' loop - continues to run as long as the
-/// condition is true. *Cautious of INFINITE Loops*
-/// The 'for' we have seen
+// 'while' loop - continues to run as long as the
+// condition is true. *Cautious of INFINITE Loops*
+// 'for' loop:
 for (let i = 0; i <= 7; i++) {
 	console.log(i);
 }
 console.log('----------------------');
 
-/// 'while' loop
+// 'while' loop:
 let num = 0;
-while (num < 11) {
+while (num < 7) {
 	console.log(num);
 	num++;
 }
