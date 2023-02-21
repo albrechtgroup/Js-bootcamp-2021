@@ -1,9 +1,11 @@
 // Function 'scope':
 // The location where a variable is defined, 
 // dictates where we have access to that variable.
+// *msg is defined and can only be used inside of 
+// the helpMe() function.
 function helpMe() {
 	let msg = "I'm on Fire!!!";
-	msg; // "I'm on Fire!!!"
+	console.log(msg); // "I'm on Fire!!!"
 }
 // This receives an Error*
 // console.log(msg); // Not defined!
@@ -24,7 +26,6 @@ function changeColor() {
 lol(); // teal
 changeColor(); // purple 
 
-
 let bird = 'Mandarin Duck';
 
 function birdWatch() {
@@ -37,34 +38,8 @@ birdWatch(); // Golden Pheasant
 console.log(bird); // Mandarin Duck
 
 // Block scope {}: 
-// *Keyword 'var' is NOT scoped in Blocks*
-// 'var'
-if (true) {
-	var animal = 'tiger';
-	console.log(animal); // tiger
-}
-console.log(animal); // tiger
-
-// for loop using 'var':
-let bears = [ 'Grizzly bear', 'Panda bear', 'Black bear' ];
-var i = 10;
-for (var i = 0; i < bears.length; i++) {
-	console.log(i, bears[i]);
-}
-console.log('----i----');
-// Below prints 3, the # of items in the loop, var*
-console.log(i); // 3 
-
-// for loop using 'let':
-let animals = [ 'Grizzly bear', 'Panda bear', 'Black bear' ];
-let j = 13;
-for (let j = 0; j < animals.length; j++) {
-	console.log(j, animals[j]);
-}
-console.log('----j----');
-console.log(j); // 13
-
 // 'let' & 'const' are scoped to their {} blocks
+// PI & 'circ' are scoped to the BLOCK {}
 let radius = 9;
 
 if (radius > 0) {
@@ -75,6 +50,33 @@ if (radius > 0) {
 console.log(radius); // 9
 // console.log(PI); // NOT DEFINED
 // console.log(circ); // NOT DEFINED
+
+// *Keyword 'var' is NOT scoped in Blocks*
+if (true) {
+	var animal = 'tiger';
+	console.log(animal); // tiger
+}
+console.log(animal); // tiger
+
+// for loop using 'var':
+// Below is an example of when using 'var' was a 
+// bad idea*
+let bears = [ 'Grizzly bear', 'Panda bear', 'Black bear' ];
+var i = 10;
+for (var i = 0; i < bears.length; i++) {
+	console.log(i, bears[i]);
+}
+// Below prints 3, the # of items in the loop, var*
+console.log(i); // 3 
+
+// for loop using 'let':
+let animals = [ 'Grizzly bear', 'Panda bear', 'Black bear' ];
+let j = 13;
+for (let j = 0; j < animals.length; j++) {
+	console.log(j, animals[j]);
+}
+// j is global outside of the for loop block
+console.log(j); // 13
 
 // 'lexical Scope' Nested functions are 'lexically'
 // bound to their parents scope
