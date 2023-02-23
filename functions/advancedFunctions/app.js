@@ -39,7 +39,7 @@ console.log(bird); // Mandarin Duck
 
 // Block scope {}: 
 // 'let' & 'const' are scoped to their {} blocks
-// PI & 'circ' are scoped to the BLOCK {}
+// Here, PI & 'circ' are scoped to the BLOCK {}
 let radius = 9;
 
 if (radius > 0) {
@@ -58,9 +58,8 @@ if (true) {
 }
 console.log(animal); // tiger
 
-// for loop using 'var':
-// Below is an example of when using 'var' was a 
-// bad idea*
+// Below is an example of when using 'var' in a for
+// loop was a bad idea*
 let bears = [ 'Grizzly bear', 'Panda bear', 'Black bear' ];
 var i = 10;
 for (var i = 0; i < bears.length; i++) {
@@ -89,7 +88,7 @@ function outer() {
 	}
 	inner(); 
 } 
-// the function 'outer' is running 'inner' func
+// the function 'outer' is running func 'inner'
 outer(); // THE SHINING
 
 // *Nested Example (React.js)
@@ -109,12 +108,12 @@ function TodoList() {
 
 // Function expressions:
 // Another syntax we can use to define functions
-// The function 'statements' we have been using
+// The function 'statements' we have been using:
 function add(x, y) {
 	return x + y;
 }
 
-// The same function as an 'expression'
+// The same function as an 'expression':
 // Assingning the function(which is an object),
 // to a variable to pass around and use.
 const sum = function(x, y) {
@@ -129,28 +128,32 @@ sum(1, 1); // 2
 squared(7); // 49
 
 // Higher Order functions - Functions that operate
-// on/with other functions:
-// function 'statement'...
+// on/with other functions: 
 function addition(x, y) {
 	return x + y;
 }
-// function 'expression'...
+// function 'expression':
 const subtract = function(x, y) {
 	return x - y;
 }
-// function 'statement'...
+// function 'statement':
 function multiply(x, y) {
 	return x * y;
 }
-// function 'expression'...
+// function 'expression':
 const divide = function(x, y) {
 	return x / y;
 }
-// This is an array of above functions 
+
+// Higher Order funcs can = Accept other funcs as 
+// arguements & Return a function:
+// function 'statement':
+// This is an array of above functions: 
 const operations = [ addition, subtract, multiply, divide ];
 
 // using the 'multiply' function, index of 2
-operations[2](3, 7); // 21
+console.log(operations[2](3, 7)); // 21
+operations[0](3, 4); // 7
 
 // 'for of' is running the parameters of func
 // looping over each of the operations in array 
@@ -159,7 +162,7 @@ for (let func of operations) {
 	console.log(result);
 }
 
-// Can store functions in objects:
+// Can store functions as a value in objects:
 const thing = {
 	doSomething: multiply
 };
@@ -167,12 +170,14 @@ const thing = {
 // created a .method()
 thing.doSomething(33, 7); ///  231
 
-//  functions as arguements:
+// Higher Order funcs can = Accept other funcs as 
+// arguements & Return a function:
+// Functions as Arguements: Very Common*
 // Here: f is the parameter:
-function callThreeTimes(f) {
-	f();
-	f();
-	f();
+function callThrice(func) {
+	func();
+	func();
+	func();
 }
 // 'cry' and 'laugh' are arguements:
 function cry() {
@@ -182,20 +187,22 @@ function cry() {
 function laugh() {
 	console.log('Ahahahahaha!!!');
 }
-
-callThreeTimes(laugh); // passes laugh func as an arg!
-callThreeTimes(cry); // passes cry func as an arg!
+// Can call cry or laugh alone, or pass into the 
+// 'callThrice" function:
+laugh(); // Ahahahahaha!!!
+callThrice(laugh); // passes laugh func as an arg!
+callThrice(cry); // passes cry func as an arg!
 
 function repeatNTimes(action, num) {
 	for (let i = 0; i < num; i++) {
 		action();
 	}
 }
-
+// arguements for (action, num) parameters:
 repeatNTimes(laugh, 3); 	
 repeatNTimes(cry, 1);
 
-//  functions as return values
+//  functions as return values:
 console.log("---Functions as Return values---");
 
 // This 'function factory' gives us 2 functions
@@ -228,7 +235,7 @@ isNiceWeather(63); // false
 // another function as an arguement, which is then
 // invoked in the Outer function.
 // We created this 'callback fuction' earlier*
-callThreeTimes(laugh); // passes a func as an arg!
+callThrice(laugh); // passes a func as an arg!
 
 // Passing in an Anonomous func is VERY common*
 setTimeout(function() {
