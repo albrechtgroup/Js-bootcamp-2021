@@ -146,7 +146,7 @@ const divide = function(x, y) {
 }
 
 // Higher Order funcs can = Accept other funcs as 
-// arguements & Return a function:
+// arguments & Return a function:
 // function 'statement':
 // This is an array of above functions: 
 const operations = [ addition, subtract, multiply, divide ];
@@ -171,15 +171,15 @@ const thing = {
 thing.doSomething(33, 7); ///  231
 
 // Higher Order funcs can = Accept other funcs as 
-// arguements & Return a function:
-// Functions as Arguements: Very Common*
-// Here: f is the parameter:
+// arguments & Return a function:
+// Functions as Arguments: Very Common*
+// Here: func is the parameter:
 function callThrice(func) {
 	func();
 	func();
 	func();
 }
-// 'cry' and 'laugh' are arguements:
+// 'cry' and 'laugh' are arguments:
 function cry() {
 	console.log('Boo Hoo!!!');
 }
@@ -198,16 +198,19 @@ function repeatNTimes(action, num) {
 		action();
 	}
 }
-// arguements for (action, num) parameters:
+// arguments for (action, num) parameters:
 repeatNTimes(laugh, 3); 	
 repeatNTimes(cry, 1);
 
 //  functions as return values:
 console.log("---Functions as Return values---");
 
+
+
 // This 'function factory' gives us 2 functions
 // below: 'triple' & 'double'
 function multiplyBy(num) {
+	// Here is where we write 'anonomous' function:
 	return function(x) {
 		return x * num;
 	};
@@ -217,7 +220,7 @@ const triple = multiplyBy(3);
 const double = multiplyBy(2);
 console.log(triple(9)); // 27
 console.log(double(100)); // 200 
- 
+
 // Another 'function factory' - inBetween
 function inBetween(x, y) {
 	return function(num) {
@@ -225,8 +228,8 @@ function inBetween(x, y) {
 	}
 }
 
-const iSChild = inBetween(0, 18);
-iSChild(17); // true
+const isChild = inBetween(0, 18);
+isChild(17); // true
 const isEighties = inBetween(1979, 1989);
 const isNiceWeather = inBetween(70, 89);
 isNiceWeather(63); // false
