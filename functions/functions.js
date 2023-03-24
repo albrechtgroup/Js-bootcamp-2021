@@ -5,7 +5,7 @@ function motivation() {
 	console.log('Or you beleive you Cannot,');
 	console.log('Either way, you are Correct.');
 }
-// 'Declaring'/'Run'that function:
+// 'Declaring' the function:
 motivation();
 console.log('----------------');
 
