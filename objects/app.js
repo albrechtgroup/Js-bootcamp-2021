@@ -53,7 +53,7 @@ console.log(fitBitData);
 
 // Nested Arrays and Objects:
 const student = {
-	firstName: 'Ava',
+	firstName: 'Andy',
 	lastName: 'Albrecht',
 	strengths: [ 'Playful', 'Innovative' ],
 	exams: {
